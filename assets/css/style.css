@@ -55,7 +55,8 @@
   );
 
   /* solid */
-
+  --violeta-card:hsla(244, 47%, 17%, 0.929);
+  --purple-skill: hsla(245, 47%, 17%, 0.546); 
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
@@ -168,12 +169,15 @@ body { background: var(--smoky-black); }
 
 .sidebar,
 article {
-  background: var(--eerie-black-2);
+  background-image: url(../images/pexels-myburgh-1102797.jpg);
+  background-size: cover;        /* cubre toda la sidebar */
+  background-position: center;   /* centra la imagen */
+  background-repeat: no-repeat;
+
   border: 1px solid var(--jet);
   border-radius: 20px;
   padding: 15px;
   box-shadow: var(--shadow-1);
-  z-index: 1;
 }
 
 .separator {
@@ -288,7 +292,7 @@ article.active {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background: hsla(244, 47%, 17%, 0.929);
   border-radius: inherit;
   z-index: -1;
 }
@@ -334,7 +338,7 @@ main {
 
 .avatar-box {
   background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  border-radius: 50px;
 }
 
 .info-content .name {
@@ -374,7 +378,7 @@ main {
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: var(--bg-gradient-jet);
+  background: hsla(244, 47%, 17%, 0.929);
   transition: var(--transition-1);
   z-index: -1;
 }
@@ -386,6 +390,9 @@ main {
 .info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
 
 .info_more-btn span { display: none; }
+
+
+
 
 .sidebar-info_more {
   opacity: 0;
@@ -460,7 +467,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: hsla(244, 47%, 17%, 0.929);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -498,7 +505,7 @@ main {
 
 .about .article-title { margin-bottom: 15px; }
 
-.about-text {
+/*.about-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
@@ -506,6 +513,27 @@ main {
 }
 
 .about-text p { margin-bottom: 15px; }
+*/
+/*.highlight {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  z-index: 1;
+}*/
+
+.highlight {
+  display: inline;
+  background: rgba(32, 14, 40, 0.843);
+  color: #fff;
+
+  padding: 0.1em 0.9em;
+  border-radius: 6px;
+
+  line-height: 1.7;
+
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 
 
 
@@ -519,9 +547,28 @@ main {
 
 .service-list {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  /*grid-template-columns: 1fr;*/
+  gap: 25px;
+  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
 }
+
+/*.service {
+  max-width: 720px;
+
+}*/
+
+.service-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+
 
 .service-item {
   position: relative;
@@ -530,13 +577,15 @@ main {
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   z-index: 1;
+  max-width: 400px;
+  border: 1px solid rgb(132, 52, 5);
 }
 
 .service-item::before {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background: hsla(244, 47%, 17%, 0.886);
   border-radius: inherit;
   z-index: -1;
 }
@@ -829,6 +878,11 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
+.section-wrapper {
+  max-width: 800px;   /* mismo ancho que las cards */
+  margin: 0 auto;     /* centra todo */
+}
+
 
 
 /**
@@ -837,8 +891,19 @@ main {
 
 .skills-title { margin-bottom: 20px; }
 
-.skills-list { padding: 20px; }
+.skills-list { padding: 20px; 
+  border: 1px solid rgb(132, 52, 5);
+  
+}
 
+.skill { margin-bottom: 20px; }
+
+.skill::before{  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--purple-skill);
+  border-radius: inherit;
+  z-index: -1;}
 
 .skills-item:not(:last-child) { margin-bottom: 15px; }
 
@@ -850,20 +915,22 @@ main {
 }
 
 .skill .title-wrapper data {
-  color: var(--light-gray);
+  color: hsla(245, 47%, 17%, 0.546);
   font-size: var(--fs-7);
   font-weight: var(--fw-300);
 }
 
 .skill-progress-bg {
-  background: var(--jet);
+  background: hsla(254, 46%, 25%, 0.546);
+  
+
   width: 100%;
   height: 8px;
   border-radius: 10px;
 }
 
 .skill-progress-fill {
-  background: var(--text-gradient-yellow);
+  background: hsla(88, 86%, 37%, 0.993);
   height: 100%;
   border-radius: inherit;
 }
