@@ -537,27 +537,11 @@ main {
   #ABOUT
 \*-----------------------------------*/
 
-.about .article-title { margin-bottom: 15px; 
-  }
+.about 
 
-/*.about-text {
-  color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-  line-height: 1.6;
-}
-
-.about-text p { margin-bottom: 15px; }
-*/
-/*.highlight {
-  position: relative;
-  display: inline-block;
-  color: #fff;
-  z-index: 1;
-}*/
 
 .highlight {
-  display: inline;
+  display: inline-block;
   background: rgba(32, 14, 40, 0.843);
   color: #fff;
 
@@ -1499,18 +1483,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .about-text { margin-bottom: 40px; }
 
-  @media (max-width: 760px) {
-  article.about {
-    padding-inline: 1rem;
-  }
-}
-
- @small (max-width: 480px) {
-  article.about {
-    padding-inline: 1rem;
-  }
-}
-
 
   /* service */
 
@@ -2002,4 +1974,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+article.about {
+  padding-inline: 1rem;
+  padding-block: 1.5rem;
 }
